@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Базовая тема приложения -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Цвет выделенного текста -->
+        <item name="colorControlActivated">#0080FF</item>
+        <!-- Цвет "капель" -->
+        <item name="android:textColorHighlight">#96BFFF</item>
+    </style>
+</resources>

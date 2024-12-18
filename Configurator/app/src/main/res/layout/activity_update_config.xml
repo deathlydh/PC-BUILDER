@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".UpdateConfigActivity">
+
+    <!-- Верхнее меню с кнопкой "Назад" и текстом -->
+    <LinearLayout
+        android:id="@+id/top_menu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="8dp"
+        android:elevation="4dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageButton
+            android:id="@+id/back_button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:src="@drawable/ic_back_arrow_black"
+            android:contentDescription="Back button"
+            android:elevation="4dp"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Обновление сборки"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_gravity="center_vertical"
+            android:paddingStart="12dp" />
+    </LinearLayout>
+
+    <!-- Скроллируемая основная часть -->
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/top_menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/button_container">
+
+        <LinearLayout
+            android:id="@+id/form_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Сборка"
+                android:textSize="12sp"
+                android:textColor="@color/light_gray"
+                android:paddingBottom="4dp" />
+            <Spinner
+                android:id="@+id/configSelectionSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/butt_border"
+                app:popupTheme="@style/SpinnerPopupTheme"
+                android:spinnerMode="dropdown"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Название сборки"
+                android:textSize="12sp"
+                android:textColor="@color/light_gray"
+                android:paddingBottom="4dp" />
+            <EditText
+                android:id="@+id/configName"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/butt_border"
+                android:hint="Введите название сборки"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textSize="16sp" />
+
+            <!-- Остальные поля (процессор, видеокарта и т.д.) -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Процессор"
+                android:textSize="12sp"
+                android:textColor="@color/light_gray"
+                android:paddingBottom="4dp" />
+            <Spinner
+                android:id="@+id/processorSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/butt_border"
+                app:popupTheme="@style/SpinnerPopupTheme"
+                android:spinnerMode="dropdown" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Видеокарта"
+                android:textSize="12sp"
+                android:textColor="@color/light_gray"
+                android:paddingBottom="4dp" />
+            <Spinner
+                android:id="@+id/graphicsCardSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/butt_border"
+                app:popupTheme="@style/SpinnerPopupTheme"
+                android:spinnerMode="dropdown" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Оперативная память"
+                android:textSize="12sp"
+                android:textColor="@color/light_gray"
+                android:paddingBottom="4dp" />
+            <Spinner
+                android:id="@+id/ramSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/butt_border"
+                app:popupTheme="@style/SpinnerPopupTheme"
+                android:spinnerMode="dropdown" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Материнская плата"
+                android:textSize="12sp"
+                android:textColor="@color/light_gray"
+                android:paddingBottom="4dp" />
+            <Spinner
+                android:id="@+id/motherboardSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/butt_border"
+                app:popupTheme="@style/SpinnerPopupTheme"
+                android:spinnerMode="dropdown" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Диск"
+                android:textSize="12sp"
+                android:textColor="@color/light_gray"
+                android:paddingBottom="4dp" />
+            <Spinner
+                android:id="@+id/storageSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/butt_border"
+                app:popupTheme="@style/SpinnerPopupTheme"
+                android:spinnerMode="dropdown" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Кулер"
+                android:textSize="12sp"
+                android:textColor="@color/light_gray"
+                android:paddingBottom="4dp" />
+            <Spinner
+                android:id="@+id/coolerSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/butt_border"
+                app:popupTheme="@style/SpinnerPopupTheme"
+                android:spinnerMode="dropdown" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Корпус"
+                android:textSize="12sp"
+                android:textColor="@color/light_gray"
+                android:paddingBottom="4dp" />
+            <Spinner
+                android:id="@+id/towerSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/butt_border"
+                app:popupTheme="@style/SpinnerPopupTheme"
+                android:spinnerMode="dropdown" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Кнопка внизу -->
+    <LinearLayout
+        android:id="@+id/button_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/updateButton"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:text="ОБНОВИТЬ"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/black"
+            app:cornerRadius="30dp" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

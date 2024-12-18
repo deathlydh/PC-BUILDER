@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "916227546448",
+    "firebase_url": "https://configur-bd-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "configur-bd",
+    "storage_bucket": "configur-bd.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:916227546448:android:6af2c0b41486d88d07e055",
+        "android_client_info": {
+          "package_name": "com.example.configurator"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0DiZ5rUHSN1FJEywknF_QO9rq-oCVKlw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
